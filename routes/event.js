@@ -6,7 +6,7 @@ import multer from 'multer'
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        return cb(null, "public/event/") 
+        return cb(null, "public/main/") 
     },
     filename: function (req, file, cb) {
         cb(null, `${Date.now()}-${file.originalname}`) 
