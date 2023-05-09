@@ -28,7 +28,9 @@ app.use("/public", express.static(__dirname + '/public'));
  
 
 // routes 
-
+app.use("/", (req, res) => {
+    res.send('Hello World')
+})
 app.use('/reporter',  reporterroute)
 app.use('/category',  categoryroute)
 app.use('/admin',  adminroute) 
