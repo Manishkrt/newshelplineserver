@@ -24,7 +24,7 @@ export const createEvent = async(req, res)=>{
 
 export const getEvent = async (req, res) => { 
     const page = Number(req.query.page) || 1
-    const limit = Number(req.query.limit) || 50 
+    const limit = Number(req.query.limit) || 100 
     let skip = (page - 1) * limit 
     try{
         const eventdata = await Event.find({}).sort({createdAt : -1}).skip(skip).limit(limit);  

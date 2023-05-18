@@ -35,7 +35,7 @@ export const createNews = async(req, res)=>{
 
 export const getnews = async (req, res) => { 
     const page = Number(req.query.page) || 1
-    const limit = Number(req.query.limit) || 100 
+    const limit = Number(req.query.limit) || 500 
     let skip = (page - 1) * limit 
     try{
         const reporternewsdata = await News.find({}).sort({createdAt : -1}).skip(skip).limit(limit);  
